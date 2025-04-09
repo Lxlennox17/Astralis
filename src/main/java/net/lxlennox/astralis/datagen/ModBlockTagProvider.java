@@ -30,5 +30,11 @@ getOrCreateTagBuilder(BlockTags.LEAVES)
 
 getOrCreateTagBuilder(BlockTags.SAPLINGS)
         .add(ModBlocks.MOONVEIL_SAPLING);
+
+getOrCreateTagBuilder(BlockTags.DIRT)
+        .add(ModBlocks.STELLAR_GRASS)
+        .add(ModBlocks.STELLAR_DIRT);
+
+
     }
 }

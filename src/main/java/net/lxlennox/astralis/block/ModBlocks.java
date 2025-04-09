@@ -1,7 +1,7 @@
 package net.lxlennox.astralis.block;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.lxlennox.astralis.Astralis;
+import net.lxlennox.astralis.block.custom.StellarGrassBlock;
 import net.lxlennox.astralis.world.tree.ModSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -11,7 +11,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
 
 public class ModBlocks {
 

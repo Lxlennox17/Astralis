@@ -21,6 +21,13 @@ public class ModItemGroups {
                   entries.add(ModBlocks.MOONVEIL_WOOD);
                   entries.add(ModBlocks.STRIPPED_MOONVEIL_LOG);
                   entries.add(ModBlocks.STRIPPED_MOONVEIL_WOOD);
+                  entries.add(ModBlocks.MOONVEIL_PLANKS);
+
+
+
+                  entries.add(ModBlocks.MOONVEIL_LEAVES);
+                  entries.add(ModBlocks.MOONVEIL_SAPLING);
+
 
 
 

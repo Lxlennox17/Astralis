@@ -1,5 +1,6 @@
-package net.lxlennox.astralis.block;
+package net.lxlennox.astralis.block.custom;
 
+import net.lxlennox.astralis.block.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
