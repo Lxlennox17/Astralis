@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "astralis:stripped_moonveil_wood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "astralis:moonveil_planks"
+  }
+}

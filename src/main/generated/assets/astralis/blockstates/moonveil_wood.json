@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "astralis:block/moonveil_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "astralis:block/moonveil_wood"
+    },
+    "axis=z": {
+      "model": "astralis:block/moonveil_wood",
+      "x": 90
+    }
+  }
+}

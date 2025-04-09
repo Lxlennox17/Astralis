@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "astralis:block/moonveil_sapling"
+  }
+}
