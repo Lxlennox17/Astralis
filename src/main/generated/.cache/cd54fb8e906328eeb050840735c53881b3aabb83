@@ -1,3 +1,9 @@
-// 1.21	2025-04-04T20:12:36.8197209	Astralis/Block Loot Tables
+// 1.21	2025-04-09T12:48:01.6868686	Astralis/Block Loot Tables
+4170c7e9ebed76cf39be58927802a9e4f8dae830 data\astralis\loot_table\blocks\moonveil_log.json
 461aad4ff91930c1a3553b41d2570fe21c3a3bd9 data\astralis\loot_table\blocks\stellar_grass.json
+d2c2cc39b75962ca3f97a6da686e67cb559d2b59 data\astralis\loot_table\blocks\stripped_moonveil_log.json
+25e01f3cb639f9b741c57fe9861b50aec3712ff5 data\astralis\loot_table\blocks\moonveil_wood.json
+3c2a5213cb4a4523f1a92a0cc3907d79078bb134 data\astralis\loot_table\blocks\moonveil_leaves.json
+7ac8f9715132d9d37f99c19890f6d5981a1bb638 data\astralis\loot_table\blocks\moonveil_sapling.json
+b18f45d4d87398563773541f55b2297a694031b7 data\astralis\loot_table\blocks\stripped_moonveil_wood.json
 91cf25c452e20b8b439585cb7e6319c4233167b3 data\astralis\loot_table\blocks\stellar_dirt.json
