@@ -40,8 +40,7 @@ public class ModBiomes {
         GenerationSettings.LookupBackedBuilder biomeBuilder =
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
-        DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
-        DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
+     
         DefaultBiomeFeatures.addLandCarvers(biomeBuilder);
 
 
@@ -71,8 +70,7 @@ public class ModBiomes {
             GenerationSettings.LookupBackedBuilder biomeBuilder =
                     new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                             context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
-            DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
-            DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
+
             DefaultBiomeFeatures.addLandCarvers(biomeBuilder);
 
 
@@ -87,7 +85,7 @@ public class ModBiomes {
                             .waterFogColor(14935011)
                             .skyColor(7039851)
                             .fogColor(14935011)
-                            .grassColor(16777215)
+                            .grassColor(13888509)
                             .foliageColor(15395819)
                             .moodSound(BiomeMoodSound.CAVE)
                             .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE)).build())

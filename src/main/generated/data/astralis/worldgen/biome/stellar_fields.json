@@ -31,17 +31,6 @@
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
-    ],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_tall_grass_2"
     ]
   ],
   "has_precipitation": true,
