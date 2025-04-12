@@ -16,6 +16,8 @@ import java.util.List;
 
 public class ModPlacedFeatures {
 
+
+
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 

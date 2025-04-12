@@ -2,15 +2,14 @@
   "carvers": {
     "air": [
       "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
+      "minecraft:cave_extra_underground"
     ]
   },
   "downfall": 0.7,
   "effects": {
     "fog_color": 14935011,
     "foliage_color": 15395819,
-    "grass_color": 16777215,
+    "grass_color": 13888509,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -30,19 +29,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
-    ],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_tall_grass_2"
+      "minecraft:lake_lava_underground"
     ]
   ],
   "has_precipitation": true,

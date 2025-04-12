@@ -9,7 +9,10 @@ import net.minecraft.sound.MusicType;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.*;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.carver.ConfiguredCarvers;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.MiscPlacedFeatures;
 
 
 public class ModBiomes {
@@ -21,13 +24,9 @@ public class ModBiomes {
             Identifier.of(Astralis.MOD_ID, "moonveil_woods"));
 
 
-
-
-
     public static void bootstrap(Registerable<Biome> context) {
-   context.register(STELLAR_FIELDS,stellarFields(context));
- context.register(MOONVEIL_WOODS,moonveilWoods(context));
-
+        context.register(STELLAR_FIELDS, stellarFields(context));
+        context.register(MOONVEIL_WOODS, moonveilWoods(context));
 
 
     }
@@ -35,14 +34,13 @@ public class ModBiomes {
     private static Biome stellarFields(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
-       DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
         GenerationSettings.LookupBackedBuilder biomeBuilder =
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
-        DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
-        DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
-        DefaultBiomeFeatures.addLandCarvers(biomeBuilder);
+
+        ModBiomes.addLandCarversAstralis(biomeBuilder);
 
 
         return new Biome.Builder()
@@ -62,39 +60,43 @@ public class ModBiomes {
                         .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE)).build())
                 .build();
     }
-        private static Biome moonveilWoods(Registerable<Biome> context) {
-            SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+    private static Biome moonveilWoods(Registerable<Biome> context) {
+        SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
 
-            DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
-            GenerationSettings.LookupBackedBuilder biomeBuilder =
-                    new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
-                            context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
-            DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
-            DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
-            DefaultBiomeFeatures.addLandCarvers(biomeBuilder);
+        GenerationSettings.LookupBackedBuilder biomeBuilder =
+                new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                        context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
 
-            return new Biome.Builder()
-                    .precipitation(true)
-                    .downfall(0.7F)
-                    .temperature(0.8F)
-                    .generationSettings(biomeBuilder.build())
-                    .spawnSettings(spawnBuilder.build())
-                    .effects((new BiomeEffects.Builder())
-                            .waterColor(15395819)
-                            .waterFogColor(14935011)
-                            .skyColor(7039851)
-                            .fogColor(14935011)
-                            .grassColor(16777215)
-                            .foliageColor(15395819)
-                            .moodSound(BiomeMoodSound.CAVE)
-                            .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE)).build())
-                    .build();
+ModBiomes.addLandCarversAstralis(biomeBuilder);
 
+        return new Biome.Builder()
+                .precipitation(true)
+                .downfall(0.7F)
+                .temperature(0.8F)
+                .generationSettings(biomeBuilder.build())
+                .spawnSettings(spawnBuilder.build())
+                .effects((new BiomeEffects.Builder())
+                        .waterColor(15395819)
+                        .waterFogColor(14935011)
+                        .skyColor(7039851)
+                        .fogColor(14935011)
+                        .grassColor(13888509)
+                        .foliageColor(15395819)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE)).build())
+                .build();
 
 
     }
-    }
 
+    public static void addLandCarversAstralis(GenerationSettings.LookupBackedBuilder builder) {
+        builder.carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE);
+        builder.carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CAVE_EXTRA_UNDERGROUND);
+        builder.feature(GenerationStep.Feature.LAKES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
+    }
+}
