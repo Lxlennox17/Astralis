@@ -1,6 +1,7 @@
 package net.lxlennox.astralis.block;
 
 import net.lxlennox.astralis.Astralis;
+import net.lxlennox.astralis.block.custom.LongDistanceLeavesBlock;
 import net.lxlennox.astralis.block.custom.StellarGrassBlock;
 import net.lxlennox.astralis.world.tree.ModSaplingGenerator;
 import net.minecraft.block.*;
@@ -21,13 +22,13 @@ public class ModBlocks {
     public static final Block STELLAR_DIRT = registerBlock("stellar_dirt",
             new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
 
-    public static final Block MOONVEIL_LOG =registerBlock("moonveil_log",
+    public static final Block MOONVEIL_LOG = registerBlock("moonveil_log",
     Blocks.createLogBlock(MapColor.TERRACOTTA_CYAN,MapColor.TERRACOTTA_ORANGE));
 
-    public static final Block STRIPPED_MOONVEIL_LOG= registerBlock("stripped_moonveil_log",
+    public static final Block STRIPPED_MOONVEIL_LOG = registerBlock("stripped_moonveil_log",
             Blocks.createLogBlock(MapColor.TERRACOTTA_ORANGE,MapColor.TERRACOTTA_ORANGE));
 
-    public static final Block MOONVEIL_WOOD=registerBlock("moonveil_wood",
+    public static final Block MOONVEIL_WOOD = registerBlock("moonveil_wood",
             new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.TERRACOTTA_CYAN)
                     .instrument(NoteBlockInstrument.BASS)
@@ -35,7 +36,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.WOOD)
                     .burnable()));
 
-       public static final Block STRIPPED_MOONVEIL_WOOD=registerBlock("stripped_moonveil_wood",
+       public static final Block STRIPPED_MOONVEIL_WOOD = registerBlock("stripped_moonveil_wood",
             new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.TERRACOTTA_ORANGE)
                     .instrument(NoteBlockInstrument.BASS)
@@ -43,12 +44,12 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.WOOD)
                     .burnable()));
 
-       public static final Block MOONVEIL_PLANKS=registerBlock("moonveil_planks",
+       public static final Block MOONVEIL_PLANKS = registerBlock("moonveil_planks",
                new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
                        .mapColor(MapColor.TERRACOTTA_ORANGE)));
 
-public static final Block MOONVEIL_LEAVES=registerBlock("moonveil_leaves",
-        new LeavesBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES)
+public static final Block MOONVEIL_LEAVES = registerBlock("moonveil_leaves",
+        new LongDistanceLeavesBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES)
                 .mapColor(MapColor.WHITE)));
 
     public static final Block MOONVEIL_SAPLING = registerBlock("moonveil_sapling",

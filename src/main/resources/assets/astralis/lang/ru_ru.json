@@ -1,0 +1,14 @@
+{
+  "block.astralis.stellar_dirt":"Звёздная земля",
+  "block.astralis.stellar_grass":"Звёздная трава",
+
+  "block.astralis.moonveil_wood":"Мунвеил древесина",
+  "block.astralis.moonveil_log":"Бревно мунвеила",
+  "block.astralis.stripped_moonveil_log":"Обтёсанное бревно мунвеила",
+  "block.astralis.stripped_moonveil_wood":"Обтёсанная древесина мунвеила",
+  "block.astralis.moonveil_planks":"Доски из мунвеила",
+  "block.astralis.moonveil_leaves": "Листья мунвеила",
+  "block.astralis.moonveil_sapling": "Саженец мунвеила",
+
+  "itemgroup.astralis.astralis": "Астралис"
+}
