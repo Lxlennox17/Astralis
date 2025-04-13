@@ -1,6 +1,8 @@
 {
   "values": [
     "astralis:stellar_grass",
-    "astralis:stellar_dirt"
+    "astralis:stellar_dirt",
+    "astralis:stellar_podzol",
+    "astralis:frozen_stellar_grass"
   ]
 }

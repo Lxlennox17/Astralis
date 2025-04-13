@@ -17,16 +17,22 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(()->new ItemStack(ModBlocks.MOONVEIL_LOG))
                     .displayName(Text.translatable("itemgroup.astralis.astralis"))
                     .entries((displayContext, entries) -> {
-                  entries.add(ModBlocks.MOONVEIL_LOG);
-                  entries.add(ModBlocks.MOONVEIL_WOOD);
-                  entries.add(ModBlocks.STRIPPED_MOONVEIL_LOG);
-                  entries.add(ModBlocks.STRIPPED_MOONVEIL_WOOD);
-                  entries.add(ModBlocks.MOONVEIL_PLANKS);
+
+                        entries.add(ModBlocks.STELLAR_GRASS);
+                        entries.add(ModBlocks.STELLAR_DIRT);
+                        entries.add(ModBlocks.STELLAR_PODZOL);
+                        entries.add(ModBlocks.FROZEN_STELLAR_GRASS);
+
+                        entries.add(ModBlocks.MOONVEIL_LOG);
+                        entries.add(ModBlocks.MOONVEIL_WOOD);
+                        entries.add(ModBlocks.STRIPPED_MOONVEIL_LOG);
+                        entries.add(ModBlocks.STRIPPED_MOONVEIL_WOOD);
+                        entries.add(ModBlocks.MOONVEIL_PLANKS);
 
 
+                        entries.add(ModBlocks.MOONVEIL_LEAVES);
+                        entries.add(ModBlocks.MOONVEIL_SAPLING);
 
-                  entries.add(ModBlocks.MOONVEIL_LEAVES);
-                  entries.add(ModBlocks.MOONVEIL_SAPLING);
 
 
 

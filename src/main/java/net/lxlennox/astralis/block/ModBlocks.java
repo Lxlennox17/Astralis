@@ -21,6 +21,21 @@ public class ModBlocks {
     public static final Block STELLAR_DIRT = registerBlock("stellar_dirt",
             new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
 
+    public static final Block STELLAR_PODZOL = registerBlock("stellar_podzol",
+            new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
+
+    public static final Block FROZEN_STELLAR_GRASS = registerBlock("frozen_stellar_grass",
+            new Block(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
+
+
+
+
+
+
+
+
+
+
     public static final Block MOONVEIL_LOG =registerBlock("moonveil_log",
     Blocks.createLogBlock(MapColor.TERRACOTTA_CYAN,MapColor.TERRACOTTA_ORANGE));
 

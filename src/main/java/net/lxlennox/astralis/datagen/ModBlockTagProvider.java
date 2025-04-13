@@ -33,7 +33,11 @@ getOrCreateTagBuilder(BlockTags.SAPLINGS)
 
 getOrCreateTagBuilder(BlockTags.DIRT)
         .add(ModBlocks.STELLAR_GRASS)
-        .add(ModBlocks.STELLAR_DIRT);
+        .add(ModBlocks.STELLAR_DIRT)
+        .add(ModBlocks.STELLAR_PODZOL)
+        .add(ModBlocks.FROZEN_STELLAR_GRASS);
+
+
 
 
     }
