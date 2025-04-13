@@ -31,16 +31,18 @@ public class MoonveilTreeFoliagePlacer extends FoliagePlacer {
     }
     protected void generatePattern(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, BlockPos centerPos, int minRadius, int maxRadius, int bigLayers, int height, boolean giantTrunk) {
         // if you want to make foliage height bigger, then just make height bigger
-        for (int i = 0; i <= height;i = i+2) {
-            //when tree is a ~ half, there should be spawn circles with maxRadius radius. If you want to make more layers with maxRadius you should make bigger bigLayers.
-            if(i >= height/2-bigLayers/2 && i <=height/2 + bigLayers/2) {
+        for (int i = 0; i <= height;i++) {
+            if(i > height/2 && i <= height/2+bigLayers) {
                 generateCircle(world, placer, random, config, centerPos.down(i), maxRadius, 0, giantTrunk);
-                generateCircle(world, placer, random, config, centerPos.down(i+1), maxRadius-1, 0, giantTrunk);
+                i++;
+                generateCircle(world, placer, random, config, centerPos.down(i), maxRadius-1, 0, giantTrunk);
             }
-            else{
-                generateCircle(world, placer, random, config, centerPos.down(i), minRadius, 0, giantTrunk);
-                generateCircle(world, placer, random, config, centerPos.down(i+1), minRadius-1, 0, giantTrunk);
-
+            else {
+                if (i % 2 == 0) {
+                    generateCircle(world, placer, random, config, centerPos.down(i), minRadius, 0, giantTrunk);
+                } else {
+                    generateCircle(world, placer, random, config, centerPos.down(i), minRadius - 1, 0, giantTrunk);
+                }
             }
         }
     }
@@ -62,15 +64,21 @@ public class MoonveilTreeFoliagePlacer extends FoliagePlacer {
     @Override
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config,
                             int trunkHeight, TreeNode treeNode, int foliageHeight, int radius, int offset) {
-        placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(2));
-        placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(1));
+        for (int i = 3; i >=0 ; i--) {
+            placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(i));
+            if(i <= 1) {
+                placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(i).east());
+                placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(i).west());
+                placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(i).south());
+                placeFoliageBlock(world, placer, random, config, treeNode.getCenter().up(i).north());
+            }
+        }
         generateCircle(world, placer, random, config, treeNode.getCenter(),
                 1, 0, treeNode.isGiantTrunk());
-        generateCircle(world, placer, random, config, treeNode.getCenter().down(1),
+        generateCircle(world, placer, random, config, treeNode.getCenter().down(),
                 1, 0, treeNode.isGiantTrunk());
         generatePattern(world, placer, random, config, treeNode.getCenter().down(2),
-                2, 3, 2, 6, treeNode.isGiantTrunk());
-
+                2, 3, random.nextBetween(1, 3), random.nextBetween(2, 9), treeNode.isGiantTrunk());
     }
 
     @Override
