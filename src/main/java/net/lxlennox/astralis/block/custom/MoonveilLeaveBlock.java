@@ -28,7 +28,7 @@ import net.minecraft.world.WorldAccess;
 
 import java.util.OptionalInt;
 
-public class LongDistanceLeavesBlock extends Block implements Waterloggable {
+public class MoonveilLeaveBlock extends Block implements Waterloggable {
     public static final MapCodec<net.minecraft.block.LeavesBlock> CODEC = createCodec(net.minecraft.block.LeavesBlock::new);
     public static final int MAX_DISTANCE = 15;
     public static final IntProperty DISTANCE;
@@ -40,7 +40,7 @@ public class LongDistanceLeavesBlock extends Block implements Waterloggable {
         return CODEC;
     }
 
-    public LongDistanceLeavesBlock(AbstractBlock.Settings settings) {
+    public MoonveilLeaveBlock(AbstractBlock.Settings settings) {
         super(settings);
         this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(DISTANCE, 7)).with(PERSISTENT, false)).with(WATERLOGGED, false));
     }
@@ -62,7 +62,7 @@ public class LongDistanceLeavesBlock extends Block implements Waterloggable {
     }
 
     protected boolean shouldDecay(BlockState state) {
-        return !(Boolean)state.get(PERSISTENT) && (Integer)state.get(DISTANCE) == 7;
+        return !(Boolean)state.get(PERSISTENT) && (Integer)state.get(DISTANCE) == 15;
     }
 
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -102,7 +102,7 @@ public class LongDistanceLeavesBlock extends Block implements Waterloggable {
     }
 
     private static int getDistanceFromLog(BlockState state) {
-        return getOptionalDistanceFromLog(state).orElse(7);
+        return getOptionalDistanceFromLog(state).orElse(15);
     }
 
     public static OptionalInt getOptionalDistanceFromLog(BlockState state) {
