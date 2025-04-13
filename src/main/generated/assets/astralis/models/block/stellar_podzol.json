@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "astralis:block/stellar_dirt",
+    "east": "astralis:block/stellar_podzol_side",
+    "north": "astralis:block/stellar_podzol_front",
+    "particle": "astralis:block/stellar_podzol_front",
+    "south": "astralis:block/stellar_podzol_side",
+    "up": "astralis:block/stellar_podzol_top",
+    "west": "astralis:block/stellar_podzol_front"
+  }
+}

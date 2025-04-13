@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "astralis:block/stellar_dirt",
+    "east": "astralis:block/frozen_stellar_grass_side",
+    "north": "astralis:block/frozen_stellar_grass_front",
+    "particle": "astralis:block/frozen_stellar_grass_front",
+    "south": "astralis:block/frozen_stellar_grass_side",
+    "up": "astralis:block/frozen_stellar_grass_top",
+    "west": "astralis:block/frozen_stellar_grass_front"
+  }
+}
