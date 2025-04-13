@@ -17,11 +17,13 @@ jobs:
           java-version: '21'
           distribution: 'microsoft'
 
-      - name: setup and generate gradle wrapper
+      - name: setup gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: wrapper
-          generate-wrapper: true
+          gradle-version: 'wrapper'
+
+      - name: generate gradle wrapper
+        run: gradle wrapper
 
       - name: validate gradle wrapper
         uses: gradle/actions/wrapper-validation@v4
