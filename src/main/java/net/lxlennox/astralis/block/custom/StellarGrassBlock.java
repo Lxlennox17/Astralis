@@ -17,7 +17,7 @@ public class StellarGrassBlock extends GrassBlock {
     private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.up();
         BlockState blockState = world.getBlockState(blockPos);
-        if (blockState.isOf(Blocks.SNOW) && (Integer)blockState.get(SnowBlock.LAYERS) == 1) {
+        if (blockState.isOf(Blocks.SNOW) && blockState.get(SnowBlock.LAYERS) == 1) {
             return true;
         } else if (blockState.getFluidState().getLevel() == 8) {
             return false;

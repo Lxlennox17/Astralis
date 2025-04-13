@@ -1,8 +1,8 @@
-package net.lxlennox.astralis.world.tree;
+package net.lxlennox.astralis.worldgen.tree;
 
 import com.mojang.serialization.MapCodec;
 import net.lxlennox.astralis.Astralis;
-import net.lxlennox.astralis.world.tree.custom.MoonveilTreeFoliagePlacer;
+import net.lxlennox.astralis.worldgen.tree.custom.MoonveilTreeFoliagePlacer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.foliage.FoliagePlacer;

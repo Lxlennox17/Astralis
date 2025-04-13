@@ -3,7 +3,7 @@
 	"package": "net.lxlennox.astralis.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+
 	],
 	"injectors": {
 		"defaultRequire": 1

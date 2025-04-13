@@ -2,7 +2,8 @@ package net.lxlennox.astralis.block;
 
 import net.lxlennox.astralis.Astralis;
 import net.lxlennox.astralis.block.custom.StellarGrassBlock;
-import net.lxlennox.astralis.world.tree.ModSaplingGenerator;
+import net.lxlennox.astralis.item.ModItemGroups;
+import net.lxlennox.astralis.worldgen.tree.ModSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
@@ -14,82 +15,105 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
+    public static final Block STELLAR_GRASS = registerBlock(
+            "stellar_grass",
+            new StellarGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)),
+            true
+    );
 
-    public static final Block STELLAR_GRASS = registerBlock("stellar_grass",
-            new StellarGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)));
+    public static final Block STELLAR_DIRT = registerBlock(
+            "stellar_dirt",
+            new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)),
+            true
+    );
 
-    public static final Block STELLAR_DIRT = registerBlock("stellar_dirt",
-            new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
+    public static final Block STELLAR_PODZOL = registerBlock(
+            "stellar_podzol",
+            new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)),
+            true
+    );
 
-    public static final Block STELLAR_PODZOL = registerBlock("stellar_podzol",
-            new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
+    public static final Block FROZEN_STELLAR_GRASS = registerBlock(
+            "frozen_stellar_grass",
+            new Block(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)),
+            true
+    );
 
-    public static final Block FROZEN_STELLAR_GRASS = registerBlock("frozen_stellar_grass",
-            new Block(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS)));
+    public static final Block MOONVEIL_LOG = registerBlock(
+            "moonveil_log",
+            Blocks.createLogBlock(MapColor.TERRACOTTA_CYAN, MapColor.TERRACOTTA_ORANGE),
+            true
+    );
 
+    public static final Block STRIPPED_MOONVEIL_LOG = registerBlock(
+            "stripped_moonveil_log",
+            Blocks.createLogBlock(MapColor.TERRACOTTA_ORANGE,MapColor.TERRACOTTA_ORANGE),
+            true
+    );
 
-
-
-
-
-
-
-
-
-    public static final Block MOONVEIL_LOG =registerBlock("moonveil_log",
-    Blocks.createLogBlock(MapColor.TERRACOTTA_CYAN,MapColor.TERRACOTTA_ORANGE));
-
-    public static final Block STRIPPED_MOONVEIL_LOG= registerBlock("stripped_moonveil_log",
-            Blocks.createLogBlock(MapColor.TERRACOTTA_ORANGE,MapColor.TERRACOTTA_ORANGE));
-
-    public static final Block MOONVEIL_WOOD=registerBlock("moonveil_wood",
+    public static final Block MOONVEIL_WOOD = registerBlock(
+            "moonveil_wood",
             new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.TERRACOTTA_CYAN)
                     .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
-                    .burnable()));
+                    .burnable()),
+            true
+    );
 
-       public static final Block STRIPPED_MOONVEIL_WOOD=registerBlock("stripped_moonveil_wood",
+       public static final Block STRIPPED_MOONVEIL_WOOD = registerBlock(
+               "stripped_moonveil_wood",
             new PillarBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.TERRACOTTA_ORANGE)
                     .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
-                    .burnable()));
+                    .burnable()),
+               true
+       );
 
-       public static final Block MOONVEIL_PLANKS=registerBlock("moonveil_planks",
+       public static final Block MOONVEIL_PLANKS = registerBlock(
+               "moonveil_planks",
                new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
-                       .mapColor(MapColor.TERRACOTTA_ORANGE)));
+                       .mapColor(MapColor.TERRACOTTA_ORANGE)),
+               true
+       );
 
-public static final Block MOONVEIL_LEAVES=registerBlock("moonveil_leaves",
-        new LeavesBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES)
-                .mapColor(MapColor.WHITE)));
+        public static final Block MOONVEIL_LEAVES = registerBlock(
+                "moonveil_leaves",
+                new LeavesBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_LEAVES)
+                        .mapColor(MapColor.WHITE)),
+                true
+        );
 
-    public static final Block MOONVEIL_SAPLING = registerBlock("moonveil_sapling",
-            new SaplingBlock(ModSaplingGenerator.MOONVEIL_TREE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block MOONVEIL_SAPLING = registerBlock(
+            "moonveil_sapling",
+            new SaplingBlock(ModSaplingGenerator.MOONVEIL_TREE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)),
+            true
+    );
 
-    public static final Block POTTED_SHADOW_SAPLING=Registry.register(Registries.BLOCK,Identifier.of(Astralis.MOD_ID,"potted_moonveil_sapling"),
-            new FlowerPotBlock(MOONVEIL_SAPLING,AbstractBlock.Settings.copy(Blocks.POTTED_SPRUCE_SAPLING).nonOpaque()));
+    public static final Block POTTED_SHADOW_SAPLING = Registry.register(Registries.BLOCK,
+            Astralis.id("potted_moonveil_sapling"),
+            new FlowerPotBlock(MOONVEIL_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_SPRUCE_SAPLING)
+                    .nonOpaque())
+    );
 
 
-
-
-
-
-    private static Block registerBlock(String name, Block block) {
-        registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(Astralis.MOD_ID, name), block);
+    // util methods
+    private static Block registerBlock(String name, Block block, boolean addToCreativeTab) {
+        registerBlockItem(name, block, addToCreativeTab);
+        return Registry.register(Registries.BLOCK,Astralis.id(name), block);
     }
 
-    private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(Astralis.MOD_ID, name),
+    private static void registerBlockItem(String name, Block block, boolean addToCreativeTab) {
+        Registry.register(Registries.ITEM, Astralis.id(name),
                 new BlockItem(block, new Item.Settings()));
+        if (addToCreativeTab)
+            ModItemGroups.getInstance().addToItemGroup(block.asItem().getDefaultStack());
     }
 
     public static void registerModBlocks() {
         Astralis.LOGGER.info("Registering Mod Blocks for " + Astralis.MOD_ID);
-
-
     }
 }

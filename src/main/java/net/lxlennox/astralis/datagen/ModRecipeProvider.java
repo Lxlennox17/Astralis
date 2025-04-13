@@ -18,21 +18,17 @@ import java.util.concurrent.CompletableFuture;
 public class ModRecipeProvider extends FabricRecipeProvider {
     public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
-
-
-
     }
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
-
-           // Moonveil Plank Recipes
-
+        // Moonveil Plank Recipes
         List<ItemConvertible> MOONVEIL_PLANKS = List.of(
                 ModBlocks.MOONVEIL_LOG,
                 ModBlocks.MOONVEIL_WOOD,
                 ModBlocks.STRIPPED_MOONVEIL_LOG,
-                ModBlocks.STRIPPED_MOONVEIL_WOOD);
+                ModBlocks.STRIPPED_MOONVEIL_WOOD
+        );
 
         for (ItemConvertible inputRedwood : MOONVEIL_PLANKS) {
             ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.MOONVEIL_PLANKS, 4)
@@ -40,12 +36,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                     .criterion("has_" + inputRedwood.asItem().getTranslationKey(),
                             InventoryChangedCriterion.Conditions.items(inputRedwood.asItem()))
                     .offerTo(recipeExporter, Identifier.of(Astralis.MOD_ID, inputRedwood.asItem().getTranslationKey() + "_to_moonveil_planks"));
-
-
-
-
-
-
         }
     }
 }

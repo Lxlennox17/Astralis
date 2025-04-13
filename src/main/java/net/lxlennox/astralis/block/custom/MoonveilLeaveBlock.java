@@ -29,20 +29,20 @@ import net.minecraft.world.WorldAccess;
 import java.util.OptionalInt;
 
 public class MoonveilLeaveBlock extends Block implements Waterloggable {
-    public static final MapCodec<net.minecraft.block.LeavesBlock> CODEC = createCodec(net.minecraft.block.LeavesBlock::new);
+
+    public static final MapCodec<MoonveilLeaveBlock> CODEC = createCodec(MoonveilLeaveBlock::new);
     public static final int MAX_DISTANCE = 15;
     public static final IntProperty DISTANCE;
     public static final BooleanProperty PERSISTENT;
     public static final BooleanProperty WATERLOGGED;
-    private static final int field_31112 = 1;
 
-    public MapCodec<? extends net.minecraft.block.LeavesBlock> getCodec() {
+    public MapCodec<? extends MoonveilLeaveBlock> getCodec() {
         return CODEC;
     }
 
     public MoonveilLeaveBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(DISTANCE, 7)).with(PERSISTENT, false)).with(WATERLOGGED, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(DISTANCE, 7).with(PERSISTENT, false).with(WATERLOGGED, false));
     }
 
     protected VoxelShape getSidesShape(BlockState state, BlockView world, BlockPos pos) {
@@ -50,7 +50,7 @@ public class MoonveilLeaveBlock extends Block implements Waterloggable {
     }
 
     protected boolean hasRandomTicks(BlockState state) {
-        return (Integer)state.get(DISTANCE) == 15 && !(Boolean)state.get(PERSISTENT);
+        return state.get(DISTANCE) == 15 && !state.get(PERSISTENT);
     }
 
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -58,11 +58,10 @@ public class MoonveilLeaveBlock extends Block implements Waterloggable {
             dropStacks(state, world, pos);
             world.removeBlock(pos, false);
         }
-
     }
 
     protected boolean shouldDecay(BlockState state) {
-        return !(Boolean)state.get(PERSISTENT) && (Integer)state.get(DISTANCE) == 15;
+        return !state.get(PERSISTENT) && state.get(DISTANCE) == 15;
     }
 
     protected void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -74,12 +73,12 @@ public class MoonveilLeaveBlock extends Block implements Waterloggable {
     }
 
     protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if ((Boolean)state.get(WATERLOGGED)) {
+        if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
         int i = getDistanceFromLog(neighborState) + 1;
-        if (i != 1 || (Integer)state.get(DISTANCE) != i) {
+        if (i != 1 || state.get(DISTANCE) != i) {
             world.scheduleBlockTick(pos, this, 1);
         }
 
@@ -98,7 +97,7 @@ public class MoonveilLeaveBlock extends Block implements Waterloggable {
             }
         }
 
-        return (BlockState)state.with(DISTANCE, i);
+        return state.with(DISTANCE, i);
     }
 
     private static int getDistanceFromLog(BlockState state) {
@@ -109,12 +108,12 @@ public class MoonveilLeaveBlock extends Block implements Waterloggable {
         if (state.isIn(BlockTags.LOGS)) {
             return OptionalInt.of(0);
         } else {
-            return state.contains(DISTANCE) ? OptionalInt.of((Integer)state.get(DISTANCE)) : OptionalInt.empty();
+            return state.contains(DISTANCE) ? OptionalInt.of(state.get(DISTANCE)) : OptionalInt.empty();
         }
     }
 
     protected FluidState getFluidState(BlockState state) {
-        return (Boolean)state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
@@ -130,12 +129,12 @@ public class MoonveilLeaveBlock extends Block implements Waterloggable {
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{DISTANCE, PERSISTENT, WATERLOGGED});
+        builder.add(DISTANCE, PERSISTENT, WATERLOGGED);
     }
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
-        BlockState blockState = (BlockState)((BlockState)this.getDefaultState().with(PERSISTENT, true)).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        BlockState blockState = this.getDefaultState().with(PERSISTENT, true).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
         return updateDistanceFromLogs(blockState, ctx.getWorld(), ctx.getBlockPos());
     }
 

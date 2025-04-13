@@ -5,12 +5,10 @@
 	"name": "Astralis",
 	"description": "This Mod adds a new Dimension where its always night!",
 	"authors": [
-		"Lxlennox!"
+		"Lxlennox!",
+		"ISeal"
 	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
+	"contact": {},
 	"license": "ARR",
 	"icon": "assets/astralis/icon.png",
 	"environment": "*",

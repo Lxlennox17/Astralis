@@ -1,7 +1,7 @@
-package net.lxlennox.astralis.world.tree;
+package net.lxlennox.astralis.worldgen.tree;
 
 import net.lxlennox.astralis.Astralis;
-import net.lxlennox.astralis.world.ModConfiguredFeatures;
+import net.lxlennox.astralis.worldgen.ModConfiguredFeatures;
 import net.minecraft.block.SaplingGenerator;
 
 import java.util.Optional;

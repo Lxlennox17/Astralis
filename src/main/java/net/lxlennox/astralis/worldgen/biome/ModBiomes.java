@@ -1,4 +1,4 @@
-package net.lxlennox.astralis.world.biome;
+package net.lxlennox.astralis.worldgen.biome;
 
 import net.lxlennox.astralis.Astralis;
 import net.minecraft.registry.Registerable;
@@ -18,17 +18,15 @@ import net.minecraft.world.gen.feature.MiscPlacedFeatures;
 public class ModBiomes {
 
     public static final RegistryKey<Biome> STELLAR_FIELDS = RegistryKey.of(RegistryKeys.BIOME,
-            Identifier.of(Astralis.MOD_ID, "stellar_fields"));
+           Astralis.id("stellar_fields"));
 
     public static final RegistryKey<Biome> MOONVEIL_WOODS = RegistryKey.of(RegistryKeys.BIOME,
-            Identifier.of(Astralis.MOD_ID, "moonveil_woods"));
+           Astralis.id("moonveil_woods"));
 
 
     public static void bootstrap(Registerable<Biome> context) {
         context.register(STELLAR_FIELDS, stellarFields(context));
         context.register(MOONVEIL_WOODS, moonveilWoods(context));
-
-
     }
 
     private static Biome stellarFields(Registerable<Biome> context) {
@@ -41,7 +39,6 @@ public class ModBiomes {
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
         ModBiomes.addLandCarversAstralis(biomeBuilder);
-
 
         return new Biome.Builder()
                 .precipitation(true)
@@ -64,7 +61,6 @@ public class ModBiomes {
     private static Biome moonveilWoods(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
-
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
         GenerationSettings.LookupBackedBuilder biomeBuilder =
@@ -72,8 +68,7 @@ public class ModBiomes {
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
 
-ModBiomes.addLandCarversAstralis(biomeBuilder);
-
+        ModBiomes.addLandCarversAstralis(biomeBuilder);
         return new Biome.Builder()
                 .precipitation(true)
                 .downfall(0.7F)
@@ -90,8 +85,6 @@ ModBiomes.addLandCarversAstralis(biomeBuilder);
                         .moodSound(BiomeMoodSound.CAVE)
                         .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE)).build())
                 .build();
-
-
     }
 
     public static void addLandCarversAstralis(GenerationSettings.LookupBackedBuilder builder) {

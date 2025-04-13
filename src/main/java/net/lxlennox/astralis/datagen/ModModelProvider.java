@@ -32,8 +32,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.MOONVEIL_SAPLING, ModBlocks.POTTED_SHADOW_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerCubeWithCustomTextures(FROZEN_STELLAR_GRASS, ModBlocks.STELLAR_DIRT, TextureMap::frontSideWithCustomBottom);
-blockStateModelGenerator.registerCubeWithCustomTextures(STELLAR_PODZOL, ModBlocks.STELLAR_DIRT, TextureMap::frontSideWithCustomBottom);
-
+        blockStateModelGenerator.registerCubeWithCustomTextures(STELLAR_PODZOL, ModBlocks.STELLAR_DIRT, TextureMap::frontSideWithCustomBottom);
     }
 
     @Override

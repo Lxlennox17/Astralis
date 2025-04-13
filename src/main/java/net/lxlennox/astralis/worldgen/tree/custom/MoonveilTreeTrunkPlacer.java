@@ -1,9 +1,9 @@
-package net.lxlennox.astralis.world.tree.custom;
+package net.lxlennox.astralis.worldgen.tree.custom;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.lxlennox.astralis.world.tree.ModTrunkPlacerTypes;
+import net.lxlennox.astralis.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;

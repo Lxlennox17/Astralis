@@ -14,15 +14,10 @@ import net.minecraft.world.biome.GrassColors;
 public class AstralisClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex)
                         -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : GrassColors.getDefaultColor(),
                 ModBlocks.STELLAR_GRASS);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModBlocks.STELLAR_GRASS);
-
-
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),ModBlocks.MOONVEIL_LEAVES,ModBlocks.MOONVEIL_SAPLING,ModBlocks.POTTED_SHADOW_SAPLING);
-
-
     }
 }
