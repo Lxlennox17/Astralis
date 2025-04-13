@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "astralis:block/moonveil_log_top",
-    "side": "astralis:block/moonveil_log"
-  }
-}
