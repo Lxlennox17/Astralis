@@ -1,8 +1,8 @@
-// 1.21	2025-04-13T15:39:00.3402249	Astralis/Model Definitions
+// 1.21	2025-04-13T16:13:00.4360811	Astralis/Model Definitions
 b5735aacf1c92644e16dc0ea06f059897e005912 assets\astralis\blockstates\stellar_podzol.json
 d289fbc6fae3dec0263998fe42f7ebf18c0b4605 assets\astralis\blockstates\potted_moonveil_sapling.json
-c76e1b5c84938edd530910e2aa3bdef0f62e7136 assets\astralis\models\block\frozen_stellar_grass.json
 c5f46fea825da7550018ce173252afbd23b49933 assets\astralis\models\block\stripped_moonveil_wood.json
+c76e1b5c84938edd530910e2aa3bdef0f62e7136 assets\astralis\models\block\frozen_stellar_grass.json
 32c2dc4965863d9b52c78950748a94fd39cabff1 assets\astralis\blockstates\moonveil_leaves.json
 735d2839fc0938e96faa6d8df0328bb8721be4db assets\astralis\models\item\stellar_dirt.json
 c8375df1647527ec99357bc38e8bb97b75912395 assets\astralis\blockstates\moonveil_planks.json

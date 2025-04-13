@@ -573,7 +573,7 @@
                                     "then_run": {
                                       "type": "minecraft:block",
                                       "result_state": {
-                                        "Name": "minecraft:moss_block"
+                                        "Name": "astralis:frozen_stellar_grass"
                                       }
                                     }
                                   },

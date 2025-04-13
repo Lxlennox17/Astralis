@@ -1,27 +1,27 @@
 package net.lxlennox.astralis.world;
 
 import net.lxlennox.astralis.Astralis;
+import net.lxlennox.astralis.block.ModBlocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
 
-
+    public static final RegistryKey<PlacedFeature> MOONVEIL_TREE_PLACED_KEY = registerKey("moonveil_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-
+        register(context, MOONVEIL_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MOONVEIL_TREE_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(10, 0.1f, 2), ModBlocks.MOONVEIL_SAPLING));
 
 
 
