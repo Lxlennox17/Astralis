@@ -3,6 +3,8 @@ package net.lxlennox.astralis.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.lxlennox.astralis.block.ModBlocks;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -15,9 +17,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.STELLAR_DIRT);
-        addDropWithSilkTouch(ModBlocks.STELLAR_GRASS,ModBlocks.STELLAR_DIRT);
-        addDropWithSilkTouch(ModBlocks.STELLAR_PODZOL,ModBlocks.STELLAR_DIRT);
-        addDropWithSilkTouch(ModBlocks.FROZEN_STELLAR_GRASS,ModBlocks.STELLAR_DIRT);
+        addDropWithSilkTouch(ModBlocks.STELLAR_GRASS_BLOCK, ModBlocks.STELLAR_DIRT);
+        addDropWithSilkTouch(ModBlocks.STELLAR_PODZOL, ModBlocks.STELLAR_DIRT);
+        addDropWithSilkTouch(ModBlocks.FROZEN_STELLAR_GRASS, ModBlocks.STELLAR_DIRT);
 
         addDrop(ModBlocks.MOONVEIL_LOG);
         addDrop(ModBlocks.MOONVEIL_WOOD);
@@ -26,5 +28,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MOONVEIL_SAPLING);
 
         addDrop(ModBlocks.MOONVEIL_LEAVES, leavesDrops(ModBlocks.MOONVEIL_LEAVES, ModBlocks.MOONVEIL_SAPLING, 0.0625f));
+
+
+        addDrop(ModBlocks.STELLAR_GRASS, shortPlantDrops(ModBlocks.STELLAR_GRASS));
+        addDrop(ModBlocks.STELLAR_SPROUTS, shortPlantDrops(ModBlocks.STELLAR_SPROUTS));
     }
 }

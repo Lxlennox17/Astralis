@@ -6,17 +6,18 @@ import net.lxlennox.astralis.item.ModItemGroups;
 import net.lxlennox.astralis.worldgen.tree.ModSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
+
 
 public class ModBlocks {
 
-    public static final Block STELLAR_GRASS = registerBlock(
-            "stellar_grass",
+    public static final Block STELLAR_GRASS_BLOCK = registerBlock(
+            "stellar_grass_block",
             new StellarGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)),
             true
     );
@@ -98,6 +99,38 @@ public class ModBlocks {
             new FlowerPotBlock(MOONVEIL_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_SPRUCE_SAPLING)
                     .nonOpaque())
     );
+
+    public static final Block STELLAR_GRASS = registerBlock(
+            "stellar_grass",
+            new ShortPlantBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .replaceable()
+                    .noCollision()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .offset(AbstractBlock.OffsetType.XYZ)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)),
+            true
+    );
+
+    public static final Block STELLAR_SPROUTS = registerBlock(
+            "stellar_sprouts",
+            new ShortPlantBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .replaceable()
+                    .noCollision()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .offset(AbstractBlock.OffsetType.XYZ)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)),
+            true
+    );
+
+
+
+
 
 
     // util methods

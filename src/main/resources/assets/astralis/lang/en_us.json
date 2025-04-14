@@ -1,10 +1,11 @@
 {
 
   "block.astralis.stellar_dirt":"Stellar Dirt",
-  "block.astralis.stellar_grass":"Stellar Grass",
+  "block.astralis.stellar_grass_block":"Stellar Grass Block",
 "block.astralis.stellar_podzol":"Stellar Podzol",
   "block.astralis.frozen_stellar_grass":"Frozen Stellar Grass",
-
+  "block.astralis.stellar_grass":"Stellar Grass ",
+ "block.astralis.stellar_sprouts":"Stellar Sprouts ",
 
 
 

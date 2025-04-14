@@ -30,9 +30,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOONVEIL_SAPLING);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
-                .add(ModBlocks.STELLAR_GRASS)
+                .add(ModBlocks.STELLAR_GRASS_BLOCK)
                 .add(ModBlocks.STELLAR_DIRT)
                 .add(ModBlocks.STELLAR_PODZOL)
                 .add(ModBlocks.FROZEN_STELLAR_GRASS);
+
+
     }
 }

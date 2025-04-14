@@ -33,6 +33,10 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerCubeWithCustomTextures(FROZEN_STELLAR_GRASS, ModBlocks.STELLAR_DIRT, TextureMap::frontSideWithCustomBottom);
         blockStateModelGenerator.registerCubeWithCustomTextures(STELLAR_PODZOL, ModBlocks.STELLAR_DIRT, TextureMap::frontSideWithCustomBottom);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.STELLAR_GRASS, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.STELLAR_SPROUTS, BlockStateModelGenerator.TintType.TINTED);
+
     }
 
     @Override

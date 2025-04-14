@@ -32,7 +32,7 @@ public class Astralis implements ModInitializer {
 		CustomPortalBuilder.beginPortal()
 				.frameBlock(Blocks.CRYING_OBSIDIAN)
 				.lightWithFluid(Fluids.LAVA)
-				.destDimID(Astralis.id("astralis_dimension"))
+				.destDimID(Astralis.id("astralisdim"))
 				.tintColor(0xc76efa)
 				.registerPortal();
 	}
@@ -52,7 +52,7 @@ public class Astralis implements ModInitializer {
 		flammableBlockRegistry.add(ModBlocks.STRIPPED_MOONVEIL_LOG, 5, 5);
 		flammableBlockRegistry.add(ModBlocks.STRIPPED_MOONVEIL_WOOD, 5, 5);
 		flammableBlockRegistry.add(ModBlocks.MOONVEIL_PLANKS, 5, 20);
-		//FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.REDWOOD_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.MOONVEIL_LEAVES, 30, 60);
 
 		// registering the strippable blocks
 		StrippableBlockRegistry.register(ModBlocks.MOONVEIL_LOG,ModBlocks.STRIPPED_MOONVEIL_LOG);

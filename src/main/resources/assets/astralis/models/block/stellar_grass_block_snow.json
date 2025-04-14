@@ -3,7 +3,7 @@
   "textures": {
     "bottom": "astralis:block/stellar_dirt",
     "particle": "astralis:block/stellar_dirt",
-    "side": "astralis:block/stellar_grass_snow",
-    "top": "astralis:block/stellar_grass_top"
+    "side": "astralis:block/stellar_grass_block_snow",
+    "top": "astralis:block/stellar_grass_block_top"
   }
 }

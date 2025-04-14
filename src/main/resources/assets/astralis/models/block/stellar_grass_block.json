@@ -3,9 +3,9 @@
   "textures": {
     "particle": "astralis:block/stellar_dirt",
     "bottom": "astralis:block/stellar_dirt",
-    "top": "astralis:block/stellar_grass_top",
-    "side": "astralis:block/stellar_grass_side",
-    "overlay": "astralis:block/stellar_grass_side_overlay"
+    "top": "astralis:block/stellar_grass_block_top",
+    "side": "astralis:block/stellar_grass_block_side",
+    "overlay": "astralis:block/stellar_grass_block_side_overlay"
   },
   "elements": [
     {   "from": [ 0, 0, 0 ],
