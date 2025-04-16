@@ -94,7 +94,7 @@ public class ModBlocks {
             true
     );
 
-    public static final Block POTTED_SHADOW_SAPLING = Registry.register(Registries.BLOCK,
+    public static final Block POTTED_MOONVEIL_SAPLING = Registry.register(Registries.BLOCK,
             Astralis.id("potted_moonveil_sapling"),
             new FlowerPotBlock(MOONVEIL_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_SPRUCE_SAPLING)
                     .nonOpaque())

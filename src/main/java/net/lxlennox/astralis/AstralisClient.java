@@ -41,7 +41,7 @@ public class AstralisClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                 ModBlocks.MOONVEIL_LEAVES,
                 ModBlocks.MOONVEIL_SAPLING,
-                ModBlocks.POTTED_SHADOW_SAPLING,
+                ModBlocks.POTTED_MOONVEIL_SAPLING,
                 ModBlocks.STELLAR_GRASS,
                 ModBlocks.STELLAR_SPROUTS);
 
