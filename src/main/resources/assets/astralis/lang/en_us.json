@@ -14,12 +14,21 @@
   "block.astralis.stripped_moonveil_log":"Stripped Moonveil Log",
   "block.astralis.stripped_moonveil_wood":"Stripped Moonveil Wood",
   "block.astralis.moonveil_planks":"Moonveil Planks",
-"block.astralis.moonveil_leaves": "Moonveil Leaves",
-"block.astralis.moonveil_sapling": "Moonveil Sapling",
+  "block.astralis.moonveil_leaves": "Moonveil Leaves",
+  "block.astralis.moonveil_sapling": "Moonveil Sapling",
 
+  "block.astralis.moonveil_stairs": "Moonveil Stairs",
+  "block.astralis.moonveil_slab": "Moonveil Slab",
+  "block.astralis.moonveil_button": "Moonveil Button",
+  "block.astralis.moonveil_pressure_plate": "Moonveil Pressure Plate",
+  "block.astralis.moonveil_fence": "Moonveil Fence",
+  "block.astralis.moonveil_fence_gate": "Moonveil Fence Gate",
+  "block.astralis.moonveil_door": "Moonveil Door",
+  "block.astralis.moonveil_trapdoor": "Moonveil Trapdoor",
+  "block.astralis.moonveil_sign": "Moonveil Sign",
 
-
-
+  "item.astralis.moonveil_boat": "Moonveil Boat",
+  "item.astralis.moonveil_chest_boat": "Moonveil Chest Boat",
 
   "itemgroup.astralis.astralis": "Astralis"
 }

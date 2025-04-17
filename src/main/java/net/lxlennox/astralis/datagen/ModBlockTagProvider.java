@@ -36,5 +36,34 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.FROZEN_STELLAR_GRASS);
 
 
+
+        // Non - Block Blocks
+        getOrCreateTagBuilder(BlockTags.FENCES)
+                .add(ModBlocks.MOONVEIL_FENCE);
+
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+                .add(ModBlocks.MOONVEIL_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.STAIRS)
+                .add(ModBlocks.MOONVEIL_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.SLABS)
+                .add(ModBlocks.MOONVEIL_SLAB);
+
+        getOrCreateTagBuilder(BlockTags.BUTTONS)
+                .add(ModBlocks.MOONVEIL_BUTTON);
+
+        getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
+                .add(ModBlocks.MOONVEIL_PRESSURE_PLATE);
+
+        getOrCreateTagBuilder(BlockTags.DOORS)
+                .add(ModBlocks.MOONVEIL_DOOR);
+
+        getOrCreateTagBuilder(BlockTags.TRAPDOORS)
+                .add(ModBlocks.MOONVEIL_TRAPDOOR);
+
+        getOrCreateTagBuilder(BlockTags.SIGNS)
+                .add(ModBlocks.MOONVEIL_SIGN);
+
     }
 }
