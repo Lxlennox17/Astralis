@@ -46,8 +46,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         //Non Block Blocks
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_STAIRS,4)
-                .pattern("R11")
-                .pattern("RR1")
+                .pattern("R")
+                .pattern("RR")
                 .pattern("RRR")
                 .input('R',ModBlocks.MOONVEIL_PLANKS)
                 .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
@@ -87,7 +87,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_TRAPDOOR,12)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_FENCE_GATE,1)
                 .pattern("SRS")
                 .pattern("SRS")
                 .input('R',ModBlocks.MOONVEIL_PLANKS)
@@ -95,10 +95,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_TRAPDOOR,12)
+                .pattern("SSS")
+                .pattern("SSS")
+                .input('S',ModBlocks.MOONVEIL_PLANKS)
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_SIGN,3)
                 .pattern("RRR")
                 .pattern("RRR")
-                .pattern("LSL")
+                .pattern(" S ")
                 .input('R',ModBlocks.MOONVEIL_PLANKS)
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
