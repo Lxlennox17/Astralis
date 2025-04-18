@@ -43,13 +43,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
 
-
-
         //Non Block Blocks
 
         createStairsRecipe(ModBlocks.MOONVEIL_STAIRS, Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS), conditionsFromItem(ModBlocks.MOONVEIL_PLANKS)).offerTo(recipeExporter,
-                        Identifier.of("moonveil_stairs"));
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS), conditionsFromItem(ModBlocks.MOONVEIL_PLANKS)).offerTo(recipeExporter);
 
 
         offerSlabRecipe(recipeExporter, RecipeCategory.MISC, ModBlocks.MOONVEIL_SLAB, ModBlocks.MOONVEIL_PLANKS);
@@ -64,29 +61,26 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
         createFenceRecipe(ModBlocks.MOONVEIL_FENCE,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_FENCE)).offerTo(recipeExporter,Identifier.of("moonveil_fence"));
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_FENCE)).offerTo(recipeExporter);
 
 
         createFenceGateRecipe(ModBlocks.MOONVEIL_FENCE_GATE,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_FENCE_GATE)).offerTo(recipeExporter,Identifier.of("moonveil_fence_gate"));
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_FENCE_GATE)).offerTo(recipeExporter);
 
 
         createDoorRecipe(ModBlocks.MOONVEIL_DOOR,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_DOOR)).offerTo(recipeExporter,Identifier.of("moonveil_door"));
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_DOOR)).offerTo(recipeExporter);
 
 
         createTrapdoorRecipe(ModBlocks.MOONVEIL_TRAPDOOR,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_TRAPDOOR)).offerTo(recipeExporter,Identifier.of("moonveil_trapdoor"));
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_TRAPDOOR)).offerTo(recipeExporter);
 
 
         createSignRecipe(ModBlocks.MOONVEIL_SIGN,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
                 .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_SIGN))
-                .offerTo(recipeExporter,Identifier.of("moonveil_sign"));
+                .offerTo(recipeExporter);
 
         offerHangingSignRecipe(recipeExporter,ModBlocks.MOONVEIL_HANGING_SIGN,ModBlocks.MOONVEIL_PLANKS);
-
-
-
 
     }
 }
