@@ -65,5 +65,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SIGNS)
                 .add(ModBlocks.MOONVEIL_SIGN);
 
+        getOrCreateTagBuilder(BlockTags.ALL_HANGING_SIGNS)
+                .add(ModBlocks.MOONVEIL_HANGING_SIGN);
+
     }
 }

@@ -26,8 +26,10 @@
   "block.astralis.moonveil_door": "Moonveil Door",
   "block.astralis.moonveil_trapdoor": "Moonveil Trapdoor",
   "block.astralis.moonveil_sign": "Moonveil Sign",
+  "block.astralis.moonveil_hanging_sign": "Moonveil Hanging Sign",
 
-  "item.astralis.moonveil_boat": "Moonveil Boat",
+
+ "item.astralis.moonveil_boat": "Moonveil Boat",
   "item.astralis.moonveil_chest_boat": "Moonveil Chest Boat",
 
   "itemgroup.astralis.astralis": "Astralis"

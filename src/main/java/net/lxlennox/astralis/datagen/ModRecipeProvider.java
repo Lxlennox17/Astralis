@@ -10,6 +10,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
@@ -43,73 +44,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
 
+
         //Non Block Blocks
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_STAIRS,4)
-                .pattern("R")
-                .pattern("RR")
-                .pattern("RRR")
-                .input('R',ModBlocks.MOONVEIL_PLANKS)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
+        createStairsRecipe(ModBlocks.MOONVEIL_STAIRS, Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS), conditionsFromItem(ModBlocks.MOONVEIL_PLANKS)).offerTo(recipeExporter,
+                        Identifier.of("moonveil_stairs"));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_SLAB,6)
-                .pattern("RRR")
-                .input('R',ModBlocks.MOONVEIL_PLANKS)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
+
+        offerSlabRecipe(recipeExporter, RecipeCategory.MISC, ModBlocks.MOONVEIL_SLAB, ModBlocks.MOONVEIL_PLANKS);
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE,ModBlocks.MOONVEIL_BUTTON,1)
                 .input(ModBlocks.MOONVEIL_PLANKS)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_BUTTON))
                 .offerTo(recipeExporter);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_PRESSURE_PLATE,1)
-                .input(ModBlocks.MOONVEIL_PLANKS)
-                .input(ModBlocks.MOONVEIL_PLANKS)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_FENCE,3)
-                .pattern("RSR")
-                .pattern("RSR")
-                .input('R',ModBlocks.MOONVEIL_PLANKS)
-                .input('S', Items.STICK)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
+        offerPressurePlateRecipe(recipeExporter,ModBlocks.MOONVEIL_PRESSURE_PLATE,ModBlocks.MOONVEIL_PLANKS);
 
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_DOOR,3)
-                .pattern("RR")
-                .pattern("RR")
-                .pattern("RR")
-                .input('R',ModBlocks.MOONVEIL_PLANKS)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
+        createFenceRecipe(ModBlocks.MOONVEIL_FENCE,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_FENCE)).offerTo(recipeExporter,Identifier.of("moonveil_fence"));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_FENCE_GATE,1)
-                .pattern("SRS")
-                .pattern("SRS")
-                .input('R',ModBlocks.MOONVEIL_PLANKS)
-                .input('S', Items.STICK)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_TRAPDOOR,12)
-                .pattern("SSS")
-                .pattern("SSS")
-                .input('S',ModBlocks.MOONVEIL_PLANKS)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
+        createFenceGateRecipe(ModBlocks.MOONVEIL_FENCE_GATE,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_FENCE_GATE)).offerTo(recipeExporter,Identifier.of("moonveil_fence_gate"));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.MOONVEIL_SIGN,3)
-                .pattern("RRR")
-                .pattern("RRR")
-                .pattern(" S ")
-                .input('R',ModBlocks.MOONVEIL_PLANKS)
-                .input('S', Items.STICK)
-                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_PLANKS))
-                .offerTo(recipeExporter);
+
+        createDoorRecipe(ModBlocks.MOONVEIL_DOOR,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_DOOR)).offerTo(recipeExporter,Identifier.of("moonveil_door"));
+
+
+        createTrapdoorRecipe(ModBlocks.MOONVEIL_TRAPDOOR,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_TRAPDOOR)).offerTo(recipeExporter,Identifier.of("moonveil_trapdoor"));
+
+
+        createSignRecipe(ModBlocks.MOONVEIL_SIGN,Ingredient.ofItems(ModBlocks.MOONVEIL_PLANKS))
+                .criterion(hasItem(ModBlocks.MOONVEIL_PLANKS),conditionsFromItem(ModBlocks.MOONVEIL_SIGN))
+                .offerTo(recipeExporter,Identifier.of("moonveil_sign"));
+
+        offerHangingSignRecipe(recipeExporter,ModBlocks.MOONVEIL_HANGING_SIGN,ModBlocks.MOONVEIL_PLANKS);
 
 
 

@@ -165,6 +165,10 @@ public class ModBlocks {
             "moonveil_sign",
             new SignBlock(WoodType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
 
+    public static final Block MOONVEIL_HANGING_SIGN =registerBlock(
+            "moonveil_hanging_sign",
+            new HangingSignBlock(WoodType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+
 
     // util methods
     private static Block registerBlock(String name, Block block) {
