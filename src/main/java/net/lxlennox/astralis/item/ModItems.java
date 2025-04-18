@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+
 //TODO: Add to creative ivn
     public static final Item MOONVEIL_BOAT = registerItem(
             "moonveil_boat",
