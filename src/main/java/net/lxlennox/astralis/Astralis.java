@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 
 import net.lxlennox.astralis.block.ModBlocks;
+import net.lxlennox.astralis.entity.ModBoats;
 import net.lxlennox.astralis.item.ModItemGroups;
 import net.lxlennox.astralis.item.ModItems;
 import net.lxlennox.astralis.worldgen.gen.ModWorldGeneration;
@@ -27,6 +28,8 @@ public class Astralis implements ModInitializer {
 	public void onInitialize() {
 		LOGGER = LoggerFactory.getLogger(MOD_ID);
 		initRegistries();
+		//Load Boats
+		ModBoats.load();
 
 		// register portal
 		CustomPortalBuilder.beginPortal()

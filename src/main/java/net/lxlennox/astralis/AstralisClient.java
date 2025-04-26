@@ -1,9 +1,11 @@
 package net.lxlennox.astralis;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.lxlennox.astralis.block.ModBlocks;
+import net.lxlennox.astralis.entity.ModBoats;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.world.biome.GrassColors;
@@ -46,7 +48,8 @@ public class AstralisClient implements ClientModInitializer {
                 ModBlocks.STELLAR_SPROUTS);
 
 
-
+        //Model Layers for Boat
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.MOONVEIL_BOAT_ID,false);
 
     }
 }

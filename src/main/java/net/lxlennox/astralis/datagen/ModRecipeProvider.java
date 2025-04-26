@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.lxlennox.astralis.Astralis;
 import net.lxlennox.astralis.block.ModBlocks;
+import net.lxlennox.astralis.item.ModItems;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -81,6 +82,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(recipeExporter);
 
         offerHangingSignRecipe(recipeExporter,ModBlocks.MOONVEIL_HANGING_SIGN,ModBlocks.MOONVEIL_PLANKS);
+        //Boats
+        offerBoatRecipe(recipeExporter, ModItems.MOONVEIL_BOAT,ModBlocks.MOONVEIL_PLANKS);
+        offerChestBoatRecipe(recipeExporter, ModItems.MOONVEIL_CHEST_BOAT,ModBlocks.MOONVEIL_PLANKS);
 
     }
 }

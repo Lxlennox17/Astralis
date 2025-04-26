@@ -32,5 +32,19 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.STELLAR_GRASS, shortPlantDrops(ModBlocks.STELLAR_GRASS));
         addDrop(ModBlocks.STELLAR_SPROUTS, shortPlantDrops(ModBlocks.STELLAR_SPROUTS));
+
+        //Non Block Blocks
+        addDrop(ModBlocks.MOONVEIL_FENCE);
+        addDrop(ModBlocks.MOONVEIL_FENCE_GATE);
+        addDrop(ModBlocks.MOONVEIL_STAIRS);
+        addDrop(ModBlocks.MOONVEIL_SLAB);
+        addDrop(ModBlocks.MOONVEIL_BUTTON);
+        addDrop(ModBlocks.MOONVEIL_PRESSURE_PLATE);
+        addDrop(ModBlocks.MOONVEIL_TRAPDOOR);
+        addDrop(ModBlocks.MOONVEIL_SIGN);
+        addDrop(ModBlocks.MOONVEIL_HANGING_SIGN);
+        addDrop(ModBlocks.MOONVEIL_TRAPDOOR);
+        addDrop(ModBlocks.MOONVEIL_DOOR,doorDrops(ModBlocks.MOONVEIL_DOOR));
+
     }
 }

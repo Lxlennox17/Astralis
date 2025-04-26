@@ -1,7 +1,6 @@
 package net.lxlennox.astralis.item;
 
 import net.lxlennox.astralis.Astralis;
-import net.minecraft.block.*;
 import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.BoatItem;
 import net.minecraft.item.Item;
@@ -21,6 +20,7 @@ public class ModItems {
             "moonveil_chest_boat",
             new BoatItem(true, BoatEntity.Type.OAK,new Item.Settings().maxCount(1))
     );
+
     private static Item registerItem(String name,Item item){
      return Registry.register(Registries.ITEM, Identifier.of(Astralis.MOD_ID,name),item);
   }
