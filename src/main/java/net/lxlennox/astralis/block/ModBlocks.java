@@ -1,5 +1,9 @@
 package net.lxlennox.astralis.block;
 
+import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.lxlennox.astralis.Astralis;
 import net.lxlennox.astralis.block.custom.StellarGrassBlock;
 import net.lxlennox.astralis.item.ModItemGroups;
@@ -14,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 
 
 public class ModBlocks {
@@ -153,21 +158,69 @@ public class ModBlocks {
 
     public static final Block MOONVEIL_DOOR = registerBlock(
             "moonveil_door",
-            new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_DOOR))
+            new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_DOOR).nonOpaque())
     );
 
     public static final Block MOONVEIL_TRAPDOOR = registerBlock(
             "moonveil_trapdoor",
-            new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR))
+            new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR).nonOpaque())
     );
 
-    public static final Block MOONVEIL_SIGN =registerBlock(
-            "moonveil_sign",
-            new SignBlock(WoodType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+    private static final Identifier MOONVEIL_SIGN_TEXTURE = Identifier.of(Astralis.MOD_ID,
+            "entity/signs/moonveil"
+    );
 
-    public static final Block MOONVEIL_HANGING_SIGN =registerBlock(
-            "moonveil_hanging_sign",
-            new HangingSignBlock(WoodType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+    private static final Identifier MOONVEIL_HANGING_SIGN_TEXTURE = Identifier.of(Astralis.MOD_ID,
+            "entity/signs/hanging/moonveil"
+    );
+
+    private static final Identifier MOONVEIL_HANGING_SIGN_GUI_TEXTURE = Identifier.of(Astralis.MOD_ID,
+            "textures/gui/hanging_signs/moonveil"
+    );
+
+    public static final TerraformSignBlock MOONVEIL_SIGN = Registry.register(Registries.BLOCK,Identifier.of(Astralis.MOD_ID,
+                    "moonveil_sign"),
+            new TerraformSignBlock(MOONVEIL_SIGN_TEXTURE, AbstractBlock.Settings.create()
+                            .mapColor(MOONVEIL_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable())
+    );
+
+    public static final TerraformWallSignBlock MOONVEIL_WALL_SIGN =Registry.register(Registries.BLOCK,Identifier.of(Astralis.MOD_ID,
+                    "moonveil_wall_sign"),
+            new TerraformWallSignBlock(MOONVEIL_SIGN_TEXTURE, AbstractBlock.Settings.create()
+                            .mapColor(MOONVEIL_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable())
+    );
+
+    public static final TerraformHangingSignBlock MOONVEIL_HANGING_SIGN = Registry.register(Registries.BLOCK,Identifier.of(Astralis.MOD_ID,
+                    "moonveil_hanging_sign"),
+            new TerraformHangingSignBlock(MOONVEIL_HANGING_SIGN_TEXTURE, MOONVEIL_HANGING_SIGN_GUI_TEXTURE,AbstractBlock.Settings.create()
+                            .mapColor(MOONVEIL_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable())
+    );
+
+    public static final TerraformWallHangingSignBlock MOONVEIL_WALL_HANGING_SIGN = Registry.register(Registries.BLOCK,Identifier.of(Astralis.MOD_ID,
+                    "moonveil_wall_hanging_sign"),
+            new TerraformWallHangingSignBlock(MOONVEIL_HANGING_SIGN_TEXTURE, MOONVEIL_HANGING_SIGN_GUI_TEXTURE,AbstractBlock.Settings.create()
+                            .mapColor(MOONVEIL_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable())
+    );
 
 
     // util methods

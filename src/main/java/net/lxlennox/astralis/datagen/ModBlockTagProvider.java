@@ -62,11 +62,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.TRAPDOORS)
                 .add(ModBlocks.MOONVEIL_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.SIGNS)
+        getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
                 .add(ModBlocks.MOONVEIL_SIGN);
 
-        getOrCreateTagBuilder(BlockTags.ALL_HANGING_SIGNS)
+        getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+                .add(ModBlocks.MOONVEIL_WALL_SIGN);
+
+        getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS)
                 .add(ModBlocks.MOONVEIL_HANGING_SIGN);
+
+        getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
+                .add(ModBlocks.MOONVEIL_WALL_HANGING_SIGN);
 
     }
 }

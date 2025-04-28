@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 
 import net.lxlennox.astralis.block.ModBlocks;
+import net.lxlennox.astralis.entity.ModBoats;
 import net.lxlennox.astralis.item.ModItemGroups;
 import net.lxlennox.astralis.item.ModItems;
 import net.lxlennox.astralis.worldgen.gen.ModWorldGeneration;
@@ -44,6 +45,7 @@ public class Astralis implements ModInitializer {
 		ModItemGroups.getInstance().registerItemGroups();
 		ModTrunkPlacerTypes.registerAstralisTrunkPlacerType();
 		ModFoliagePlacerTypes.register();
+		ModBoats.load();
 
 		FlammableBlockRegistry flammableBlockRegistry = FlammableBlockRegistry.getDefaultInstance();
 		// registering flammable blocks

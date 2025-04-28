@@ -26,6 +26,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.STRIPPED_MOONVEIL_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_MOONVEIL_LOG.asItem());
 
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.MOONVEIL_PLANKS.asItem());
         //Boats
         getOrCreateTagBuilder(ItemTags.BOATS)
                 .add(ModItems.MOONVEIL_BOAT);
