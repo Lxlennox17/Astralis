@@ -40,6 +40,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MOONVEIL_TRAPDOOR);
         addDrop(ModBlocks.MOONVEIL_DOOR,doorDrops(ModBlocks.MOONVEIL_DOOR));
 
+        addDrop(ModBlocks.FROSTBLOOM_PETALS);
+
 
 
         addDrop(ModBlocks.MOONVEIL_LEAVES, leavesDrops(ModBlocks.MOONVEIL_LEAVES, ModBlocks.MOONVEIL_SAPLING, 0.0625f));

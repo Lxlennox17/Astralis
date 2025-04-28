@@ -47,6 +47,7 @@ public class AstralisClient implements ClientModInitializer {
                 ModBlocks.MOONVEIL_DOOR,
                 ModBlocks.MOONVEIL_TRAPDOOR,
                 ModBlocks.POTTED_MOONVEIL_SAPLING,
+                ModBlocks.FROSTBLOOM_PETALS,
                 ModBlocks.STELLAR_GRASS,
                 ModBlocks.STELLAR_SPROUTS);
 

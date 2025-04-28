@@ -158,12 +158,14 @@ public class ModBlocks {
 
     public static final Block MOONVEIL_DOOR = registerBlock(
             "moonveil_door",
-            new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_DOOR).nonOpaque())
+            new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_DOOR)
+                    .nonOpaque())
     );
 
     public static final Block MOONVEIL_TRAPDOOR = registerBlock(
             "moonveil_trapdoor",
-            new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR).nonOpaque())
+            new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)
+                    .nonOpaque())
     );
 
     private static final Identifier MOONVEIL_SIGN_TEXTURE = Identifier.of(Astralis.MOD_ID,
@@ -222,6 +224,14 @@ public class ModBlocks {
                             .burnable())
     );
 
+    public static final Block FROSTBLOOM_PETALS = registerBlock(
+            "frostbloom_petals",
+            new FlowerbedBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .noCollision()
+                    .sounds(BlockSoundGroup.PINK_PETALS)
+                    .pistonBehavior(PistonBehavior.DESTROY))
+    );
 
     // util methods
     private static Block registerBlock(String name, Block block) {

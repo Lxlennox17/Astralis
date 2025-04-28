@@ -87,5 +87,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBoatRecipe(recipeExporter, ModItems.MOONVEIL_BOAT,ModBlocks.MOONVEIL_PLANKS);
         offerChestBoatRecipe(recipeExporter, ModItems.MOONVEIL_CHEST_BOAT,ModBlocks.MOONVEIL_PLANKS);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT_BLUE_DYE)
+                .input(ModBlocks.FROSTBLOOM_PETALS)
+                .criterion(hasItem(ModBlocks.FROSTBLOOM_PETALS), conditionsFromItem(ModBlocks.FROSTBLOOM_PETALS))
+                .offerTo(recipeExporter);
+
     }
 }
