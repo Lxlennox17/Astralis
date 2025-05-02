@@ -9,7 +9,7 @@
 		"ISeal"
 	],
 	"contact": {},
-	"license": "ARR",
+	"license": "ARR - Custom License ",
 	"icon": "assets/astralis/icon.png",
 	"environment": "*",
 	"entrypoints": {
