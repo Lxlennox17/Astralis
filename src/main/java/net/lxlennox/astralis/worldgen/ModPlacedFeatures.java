@@ -3,11 +3,9 @@ package net.lxlennox.astralis.worldgen;
 import net.lxlennox.astralis.Astralis;
 import net.lxlennox.astralis.block.ModBlocks;
 import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 
