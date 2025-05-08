@@ -2,10 +2,13 @@ package net.lxlennox.astralis.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.renderer.v1.material.BlendMode;
 import net.lxlennox.astralis.Astralis;
 import net.lxlennox.astralis.block.ModBlocks;
 import net.lxlennox.astralis.item.ModItems;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -90,6 +93,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT_BLUE_DYE)
                 .input(ModBlocks.FROSTBLOOM_PETALS)
                 .criterion(hasItem(ModBlocks.FROSTBLOOM_PETALS), conditionsFromItem(ModBlocks.FROSTBLOOM_PETALS))
+                .offerTo(recipeExporter);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.STELLAR_COBBLESTONE), RecipeCategory.BUILDING_BLOCKS, ModBlocks.STELLAR_STONE.asItem(), 0.1F, 200)
+                .criterion("has_stellar_stone", conditionsFromItem(ModBlocks.STELLAR_COBBLESTONE))
+                .offerTo(recipeExporter);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.COBBLED_STELLARSLATE), RecipeCategory.BUILDING_BLOCKS, ModBlocks.STELLARSLATE.asItem(), 0.1F, 200)
+                .criterion("has_stellar_stone", conditionsFromItem(ModBlocks.COBBLED_STELLARSLATE))
                 .offerTo(recipeExporter);
 
     }

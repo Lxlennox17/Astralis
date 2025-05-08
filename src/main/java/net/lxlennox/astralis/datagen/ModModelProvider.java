@@ -4,8 +4,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.lxlennox.astralis.block.ModBlocks;
 import net.lxlennox.astralis.item.ModItems;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.util.Identifier;
 
 import static net.lxlennox.astralis.block.ModBlocks.FROZEN_STELLAR_GRASS;
 import static net.lxlennox.astralis.block.ModBlocks.STELLAR_PODZOL;
@@ -18,6 +20,11 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLAR_DIRT);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLAR_STONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLAR_COBBLESTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COBBLED_STELLARSLATE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLARSLATE);
+
 
         blockStateModelGenerator.registerLog(ModBlocks.MOONVEIL_LOG).log(ModBlocks.MOONVEIL_LOG).wood(ModBlocks.MOONVEIL_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_MOONVEIL_LOG).log(ModBlocks.STRIPPED_MOONVEIL_LOG).wood(ModBlocks.STRIPPED_MOONVEIL_WOOD);

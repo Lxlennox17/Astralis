@@ -35,7 +35,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STELLAR_PODZOL)
                 .add(ModBlocks.FROZEN_STELLAR_GRASS);
 
-
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.STELLAR_STONE)
+                .add(ModBlocks.STELLAR_COBBLESTONE)
+                .add(ModBlocks.STELLARSLATE)
+                .add(ModBlocks.COBBLED_STELLARSLATE);
 
         // Non - Block Blocks
         getOrCreateTagBuilder(BlockTags.FENCES)

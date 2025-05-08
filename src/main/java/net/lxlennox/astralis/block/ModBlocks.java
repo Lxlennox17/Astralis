@@ -43,6 +43,26 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().mapColor(MapColor.LIGHT_BLUE).ticksRandomly().strength(0.6F).sounds(BlockSoundGroup.GRASS))
     );
 
+    public static final Block STELLAR_STONE = registerBlock(
+            "stellar_stone",
+            new Block(AbstractBlock.Settings.copy(Blocks.STONE))
+    );
+
+    public static final Block STELLAR_COBBLESTONE = registerBlock(
+            "stellar_cobblestone",
+            new Block(AbstractBlock.Settings.copy(Blocks.COBBLESTONE))
+    );
+
+    public static final Block STELLARSLATE = registerBlock(
+            "stellarslate",
+            new Block(AbstractBlock.Settings.copy(Blocks.DEEPSLATE))
+    );
+
+    public static final Block COBBLED_STELLARSLATE = registerBlock(
+            "cobbled_stellarslate",
+            new Block(AbstractBlock.Settings.copy(Blocks.COBBLED_DEEPSLATE))
+    );
+
     public static final Block MOONVEIL_LOG = registerBlock(
             "moonveil_log",
             Blocks.createLogBlock(MapColor.TERRACOTTA_CYAN, MapColor.TERRACOTTA_ORANGE)
@@ -232,6 +252,9 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.PINK_PETALS)
                     .pistonBehavior(PistonBehavior.DESTROY))
     );
+
+
+
 
     // util methods
     private static Block registerBlock(String name, Block block) {

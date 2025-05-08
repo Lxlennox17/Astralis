@@ -23,7 +23,7 @@ public class ModPlacedFeatures {
 
         register(context, MOONVEIL_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MOONVEIL_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(10, 0.1f, 2), ModBlocks.MOONVEIL_SAPLING));
+                        PlacedFeatures.createCountExtraModifier(2, 0.1f, 1), ModBlocks.MOONVEIL_SAPLING));
 
         register(context,STELLAR_GRASS_PLACED_KEY,configuredFeatures.getOrThrow(ModConfiguredFeatures.STELLAR_GRASS_KEY),
                 CountPlacementModifier.of(10), SquarePlacementModifier.of(),PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());

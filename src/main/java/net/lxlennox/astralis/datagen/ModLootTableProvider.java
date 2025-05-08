@@ -21,6 +21,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDropWithSilkTouch(ModBlocks.STELLAR_GRASS_BLOCK, ModBlocks.STELLAR_DIRT);
         addDropWithSilkTouch(ModBlocks.STELLAR_PODZOL, ModBlocks.STELLAR_DIRT);
         addDropWithSilkTouch(ModBlocks.FROZEN_STELLAR_GRASS, ModBlocks.STELLAR_DIRT);
+        addDropWithSilkTouch(ModBlocks.STELLAR_STONE,ModBlocks.STELLAR_COBBLESTONE);
+        addDropWithSilkTouch(ModBlocks.STELLARSLATE,ModBlocks.COBBLED_STELLARSLATE);
+        addDrop(ModBlocks.STELLAR_COBBLESTONE);
+        addDrop(ModBlocks.COBBLED_STELLARSLATE);
+
 
         addDrop(ModBlocks.MOONVEIL_LOG);
         addDrop(ModBlocks.MOONVEIL_WOOD);

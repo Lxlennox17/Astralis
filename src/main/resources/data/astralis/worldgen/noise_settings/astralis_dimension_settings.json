@@ -49,7 +49,7 @@
                 "argument1": 0,
                 "argument2": {
                   "type": "minecraft:add",
-                  "argument1": -0.3,
+                  "argument1": -1.0,
                   "argument2": "astralis:continents"
                 }
               },
