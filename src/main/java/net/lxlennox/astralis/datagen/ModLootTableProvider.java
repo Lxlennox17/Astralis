@@ -45,6 +45,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.FROSTBLOOM_PETALS);
 
+addDrop(ModBlocks.SNOWBLOOM);
+        addPottedPlantDrops(ModBlocks.POTTED_SNOWBLOOM);
 
 
         addDrop(ModBlocks.MOONVEIL_LEAVES, leavesDrops(ModBlocks.MOONVEIL_LEAVES, ModBlocks.MOONVEIL_SAPLING, 0.0625f));
@@ -52,5 +54,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.STELLAR_GRASS, shortPlantDrops(ModBlocks.STELLAR_GRASS));
         addDrop(ModBlocks.STELLAR_SPROUTS, shortPlantDrops(ModBlocks.STELLAR_SPROUTS));
+
     }
 }

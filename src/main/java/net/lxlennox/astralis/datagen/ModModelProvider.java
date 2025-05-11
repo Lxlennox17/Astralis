@@ -56,6 +56,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.STELLAR_GRASS, BlockStateModelGenerator.TintType.TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.STELLAR_SPROUTS, BlockStateModelGenerator.TintType.TINTED);
         blockStateModelGenerator.registerFlowerbed(ModBlocks.FROSTBLOOM_PETALS);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SNOWBLOOM, ModBlocks.POTTED_SNOWBLOOM, BlockStateModelGenerator.TintType.NOT_TINTED);
 
     }
 

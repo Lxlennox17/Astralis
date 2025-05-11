@@ -11,6 +11,7 @@ import net.lxlennox.astralis.worldgen.tree.ModSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -251,6 +252,17 @@ public class ModBlocks {
                     .pistonBehavior(PistonBehavior.DESTROY))
     );
 
+    public static final Block SNOWBLOOM=registerBlock(
+            "snowbloom",
+            new FlowerBlock(StatusEffects.FIRE_RESISTANCE,10,AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY)
+                    .nonOpaque().noCollision())
+    );
+
+    public static final Block POTTED_SNOWBLOOM=Registry.register(Registries.BLOCK,Identifier.of(Astralis.MOD_ID,
+                    "potted_snowbloom"),
+            new FlowerPotBlock(SNOWBLOOM,AbstractBlock.Settings.copy(Blocks.POTTED_LILY_OF_THE_VALLEY)
+                    .nonOpaque())
+    );
 
 
 

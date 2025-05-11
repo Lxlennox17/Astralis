@@ -87,9 +87,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBoatRecipe(recipeExporter, ModItems.MOONVEIL_BOAT,ModBlocks.MOONVEIL_PLANKS);
         offerChestBoatRecipe(recipeExporter, ModItems.MOONVEIL_CHEST_BOAT,ModBlocks.MOONVEIL_PLANKS);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT_BLUE_DYE)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE)
                 .input(ModBlocks.FROSTBLOOM_PETALS)
-                .criterion(hasItem(ModBlocks.FROSTBLOOM_PETALS), conditionsFromItem(ModBlocks.FROSTBLOOM_PETALS))
+                .criterion(hasItem(ModBlocks.FROSTBLOOM_PETALS), conditionsFromItem(Items.WHITE_DYE))
                 .offerTo(recipeExporter);
 
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.STELLAR_COBBLESTONE), RecipeCategory.BUILDING_BLOCKS, ModBlocks.STELLAR_STONE.asItem(), 0.1F, 200)
@@ -100,5 +100,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_stellar_stone", conditionsFromItem(ModBlocks.COBBLED_STELLARSLATE))
                 .offerTo(recipeExporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,Items.LIGHT_BLUE_DYE)
+                .input(ModBlocks.SNOWBLOOM)
+                .criterion(hasItem(ModBlocks.SNOWBLOOM),conditionsFromItem(Items.LIGHT_BLUE_DYE))
+                .offerTo(recipeExporter);
     }
 }
