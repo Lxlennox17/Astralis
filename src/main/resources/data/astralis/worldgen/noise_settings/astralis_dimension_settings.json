@@ -1,7 +1,7 @@
 {
   "aquifers_enabled": true,
   "default_block": {
-    "Name": "minecraft:stone"
+    "Name": "astralis:stellar_stone"
   },
   "default_fluid": {
     "Name": "minecraft:water",
@@ -580,7 +580,7 @@
         "then_run": {
           "type": "minecraft:block",
           "result_state": {
-            "Name": "minecraft:deepslate",
+            "Name": "astralis:stellarslate",
             "Properties": {
               "axis": "y"
             }

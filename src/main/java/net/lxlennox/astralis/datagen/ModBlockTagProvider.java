@@ -39,7 +39,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STELLAR_STONE)
                 .add(ModBlocks.STELLAR_COBBLESTONE)
                 .add(ModBlocks.STELLARSLATE)
-                .add(ModBlocks.COBBLED_STELLARSLATE);
+                .add(ModBlocks.COBBLED_STELLARSLATE)
+                .add(ModBlocks.LUNARIUM_DEEPSLATE_ORE)
+                .add(ModBlocks.LUNARIUM_ORE);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.LUNARIUM_DEEPSLATE_ORE)
+                .add(ModBlocks.LUNARIUM_ORE);
+
+        getOrCreateTagBuilder(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
+                .add(ModBlocks.STELLAR_STONE)
+                .add(ModBlocks.STELLARSLATE);
+
 
         // Non - Block Blocks
         getOrCreateTagBuilder(BlockTags.FENCES)

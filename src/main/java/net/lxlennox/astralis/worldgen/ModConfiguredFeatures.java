@@ -6,11 +6,13 @@ import net.lxlennox.astralis.worldgen.tree.custom.MoonveilTreeFoliagePlacer;
 import net.lxlennox.astralis.worldgen.tree.custom.MoonveilTreeTrunkPlacer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerbedBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
@@ -21,6 +23,8 @@ import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MOONVEIL_TREE_KEY = registerKey("moonveil_tree");
 public static final RegistryKey<ConfiguredFeature<?, ?>> STELLAR_GRASS_KEY = registerKey("stellar_grass");
+public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWBLOOM_KEY = registerKey("patch_snowbloom");
+public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_FROSTBLOOM_PETALS_KEY = registerKey("patch_frostbloom_petals");
 
 
 
@@ -43,8 +47,26 @@ public static final RegistryKey<ConfiguredFeature<?, ?>> STELLAR_GRASS_KEY = reg
                 createRandomPatchFeatureConfig(weightedGrassProvider, 32)
         );
 
+        register(context, PATCH_SNOWBLOOM_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig
+                        (BlockStateProvider.of(ModBlocks.SNOWBLOOM)))
+        );
 
+        DataPool.Builder<BlockState> builder = DataPool.builder();
 
+        for (int i = 1; i <= 4; i++) {
+            for (Direction direction : Direction.Type.HORIZONTAL) {
+                builder.add(ModBlocks.FROSTBLOOM_PETALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, i).with(FlowerbedBlock.FACING, direction), 1);
+            }
+        }
+        ConfiguredFeatures.register(
+                context,
+                PATCH_FROSTBLOOM_PETALS_KEY,
+                Feature.FLOWER,
+                new RandomPatchFeatureConfig(
+                        96, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(builder)))
+                )
+        );
     }
     private static RandomPatchFeatureConfig createRandomPatchFeatureConfig(BlockStateProvider provider, int tries) {
         return new RandomPatchFeatureConfig(

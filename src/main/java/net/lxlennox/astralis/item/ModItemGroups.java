@@ -34,6 +34,7 @@ public class ModItemGroups {
                FabricItemGroup.builder().icon(()->new ItemStack(ModBlocks.MOONVEIL_LOG))
                        .entries( (itemGroup, entries) -> {
                            entries.addAll(toAdd);
+
                        })
                        .displayName(Text.translatable("itemgroup.astralis.astralis")).build());
     }

@@ -18,6 +18,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 
 public class ModBlocks {
@@ -264,6 +265,15 @@ public class ModBlocks {
                     .nonOpaque())
     );
 
+    public static final Block LUNARIUM_ORE = registerBlock(
+            "sapphire_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE)
+                    .requiresTool())
+    );
+
+    public static final Block LUNARIUM_DEEPSLATE_ORE = registerBlock("lunarium_deepslate_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(3, 6), AbstractBlock.Settings.copy(Blocks.DEEPSLATE_DIAMOND_ORE))
+    );
 
 
     // util methods
