@@ -271,7 +271,7 @@ public class ModBlocks {
                     .requiresTool())
     );
 
-    public static final Block LUNARIUM_DEEPSLATE_ORE = registerBlock("lunarium_deepslate_ore",
+    public static final Block DEEPSLATE_LUNARIUM_ORE = registerBlock("deepslate_lunarium_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6), AbstractBlock.Settings.copy(Blocks.DEEPSLATE_DIAMOND_ORE))
     );
 

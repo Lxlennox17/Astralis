@@ -5,12 +5,13 @@ import net.lxlennox.astralis.block.ModBlocks;
 import net.lxlennox.astralis.worldgen.tree.custom.MoonveilTreeFoliagePlacer;
 import net.lxlennox.astralis.worldgen.tree.custom.MoonveilTreeTrunkPlacer;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerbedBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.RuleTest;
+import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -19,12 +20,15 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 
+import java.util.List;
+
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MOONVEIL_TREE_KEY = registerKey("moonveil_tree");
 public static final RegistryKey<ConfiguredFeature<?, ?>> STELLAR_GRASS_KEY = registerKey("stellar_grass");
 public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWBLOOM_KEY = registerKey("patch_snowbloom");
 public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_FROSTBLOOM_PETALS_KEY = registerKey("patch_frostbloom_petals");
+public static final RegistryKey<ConfiguredFeature<?, ?>> LUNARIUM_ORE_KEY = registerKey("lunarium_ore");
 
 
 
@@ -67,6 +71,17 @@ public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_FROSTBLOOM_PETALS
                         96, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(builder)))
                 )
         );
+
+        RuleTest stoneReplaceables= new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceables=new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+
+        List<OreFeatureConfig.Target> overworldEclipseOres=
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables,ModBlocks.LUNARIUM_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplaceables,ModBlocks.DEEPSLATE_LUNARIUM_ORE.getDefaultState()));
+
+        register(context,LUNARIUM_ORE_KEY,Feature.ORE,new OreFeatureConfig(overworldEclipseOres,8)
+        );
+
     }
     private static RandomPatchFeatureConfig createRandomPatchFeatureConfig(BlockStateProvider provider, int tries) {
         return new RandomPatchFeatureConfig(

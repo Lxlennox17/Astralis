@@ -6,6 +6,7 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 
@@ -16,6 +17,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> STELLAR_GRASS_PLACED_KEY = registerKey("stellar_grass_placed");
     public static final RegistryKey<PlacedFeature> PATCH_SNOWBLOOM_PLACED_KEY = registerKey("patch_snowbloom_placed");
     public static final RegistryKey<PlacedFeature> PATCH_FROSTBLOOM_PETALS_PLACED_KEY = registerKey("patch_frostbloom_petals_placed");
+    public static final RegistryKey<PlacedFeature> LUNARIUM_ORE_PLACED_KEY = registerKey("lunarium_ore_placed");
 
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
@@ -44,6 +46,10 @@ public class ModPlacedFeatures {
                 BiomePlacementModifier.of()
        );
 
+       register(context,LUNARIUM_ORE_PLACED_KEY,configuredFeatures.getOrThrow(ModConfiguredFeatures.LUNARIUM_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(4,
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-60),YOffset.fixed(10)))
+        );
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

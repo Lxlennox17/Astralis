@@ -67,7 +67,7 @@ addDrop(ModBlocks.SNOWBLOOM);
         addDrop(ModBlocks.STELLAR_SPROUTS, shortPlantDrops(ModBlocks.STELLAR_SPROUTS));
 
         addDrop(ModBlocks.LUNARIUM_ORE, multipleOreDrops(ModBlocks.LUNARIUM_ORE, ModItems.RAW_LUNARIUM_INGOT, 3, 7));
-       addDrop(ModBlocks.LUNARIUM_DEEPSLATE_ORE, multipleOreDrops(ModBlocks.LUNARIUM_DEEPSLATE_ORE, ModItems.RAW_LUNARIUM_INGOT, 3, 7));
+       addDrop(ModBlocks.DEEPSLATE_LUNARIUM_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_LUNARIUM_ORE, ModItems.RAW_LUNARIUM_INGOT, 3, 7));
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
