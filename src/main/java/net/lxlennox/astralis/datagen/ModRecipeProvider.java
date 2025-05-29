@@ -8,6 +8,7 @@ import net.lxlennox.astralis.item.ModItems;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -104,5 +105,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ModBlocks.SNOWBLOOM)
                 .criterion(hasItem(ModBlocks.SNOWBLOOM),conditionsFromItem(Items.LIGHT_BLUE_DYE))
                 .offerTo(recipeExporter);
+
+        offerReversibleCompactingRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModItems.LUNARIUM_INGOT,
+                RecipeCategory.DECORATIONS, ModBlocks.LUNARIUM_BLOCK
+        );
+
+        offerReversibleCompactingRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_LUNARIUM_INGOT,
+                RecipeCategory.DECORATIONS, ModBlocks.RAW_LUNARIUM_BLOCK
+        );
+
+        List<ItemConvertible> PINK_GARNET_SMELTABLES = List.of(
+                ModItems.RAW_LUNARIUM_INGOT,
+                ModBlocks.LUNARIUM_ORE,
+                ModBlocks.STELLARSLATE_LUNARIUM_ORE
+        );
+
+        offerSmelting(recipeExporter, PINK_GARNET_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARIUM_INGOT, 0.25f, 200,
+                "pink_garnet"
+        );
+        offerBlasting(recipeExporter, PINK_GARNET_SMELTABLES, RecipeCategory.MISC, ModItems.LUNARIUM_INGOT, 0.25f, 100,
+                "pink_garnet"
+        );
+
     }
 }

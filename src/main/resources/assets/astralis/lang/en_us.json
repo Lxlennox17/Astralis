@@ -11,8 +11,11 @@
   "block.astralis.stellar_cobblestone":" Stellar Cobblestone",
   "block.astralis.stellarslate":"Stellarslate",
  "block.astralis.cobbled_stellarslate":"Cobbled Stellarslate",
-"block.astralis.lunarium_ore":"Stellarslate",
- "block.astralis.deepslate_lunarium_ore":"Cobbled Stellarslate",
+"block.astralis.lunarium_ore":"Lunarium Ore",
+ "block.astralis.stellarslate_lunarium_ore":"Stellarslate Lunarium Ore",
+ "block.astralis.lunarium_block":"Lunarium Block",
+ "block.astralis.raw_lunarium_block":"Raw Lunarium Block",
+
 
 
 
@@ -39,6 +42,8 @@
 
  "item.astralis.moonveil_boat": "Moonveil Boat",
   "item.astralis.moonveil_chest_boat": "Moonveil Chest Boat",
+ "item.astralis.lunarium_ingot": "Lunarium Ingot",
+  "item.astralis.raw_lunarium_ingot": "Raw Lunarium Ingot",
 
   "itemgroup.astralis.astralis": "Astralis"
 }

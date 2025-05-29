@@ -18,6 +18,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> PATCH_SNOWBLOOM_PLACED_KEY = registerKey("patch_snowbloom_placed");
     public static final RegistryKey<PlacedFeature> PATCH_FROSTBLOOM_PETALS_PLACED_KEY = registerKey("patch_frostbloom_petals_placed");
     public static final RegistryKey<PlacedFeature> LUNARIUM_ORE_PLACED_KEY = registerKey("lunarium_ore_placed");
+    public static final RegistryKey<PlacedFeature> MOSSY_STELLAR_STONE_PLACED_KEY = registerKey("mossy_stellar_stone_placed");
 
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
@@ -50,6 +51,8 @@ public class ModPlacedFeatures {
                 ModOrePlacement.modifiersWithCount(4,
                         HeightRangePlacementModifier.trapezoid(YOffset.fixed(-60),YOffset.fixed(10)))
         );
+
+
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

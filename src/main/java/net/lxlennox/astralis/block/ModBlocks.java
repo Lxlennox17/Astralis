@@ -266,13 +266,24 @@ public class ModBlocks {
     );
 
     public static final Block LUNARIUM_ORE = registerBlock(
-            "sapphire_ore",
+            "lunarium_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE)
                     .requiresTool())
     );
 
-    public static final Block DEEPSLATE_LUNARIUM_ORE = registerBlock("deepslate_lunarium_ore",
+    public static final Block STELLARSLATE_LUNARIUM_ORE = registerBlock(
+            "stellarslate_lunarium_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6), AbstractBlock.Settings.copy(Blocks.DEEPSLATE_DIAMOND_ORE))
+    );
+
+    public static final Block LUNARIUM_BLOCK=registerBlock(
+            "lunarium_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK))
+    );
+
+    public static final Block RAW_LUNARIUM_BLOCK=registerBlock(
+            "raw_lunarium_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS))
     );
 
 

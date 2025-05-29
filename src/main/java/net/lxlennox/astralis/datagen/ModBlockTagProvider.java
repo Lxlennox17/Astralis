@@ -3,6 +3,7 @@ package net.lxlennox.astralis.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.lxlennox.astralis.block.ModBlocks;
+import net.lxlennox.astralis.tag.ModTags;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -40,20 +41,26 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STELLAR_COBBLESTONE)
                 .add(ModBlocks.STELLARSLATE)
                 .add(ModBlocks.COBBLED_STELLARSLATE)
-                .add(ModBlocks.DEEPSLATE_LUNARIUM_ORE)
+                .add(ModBlocks.STELLARSLATE_LUNARIUM_ORE)
                 .add(ModBlocks.LUNARIUM_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.DEEPSLATE_LUNARIUM_ORE)
+                .add(ModBlocks.STELLARSLATE_LUNARIUM_ORE)
                 .add(ModBlocks.LUNARIUM_ORE);
 
         getOrCreateTagBuilder(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
                 .add(ModBlocks.STELLAR_STONE)
                 .add(ModBlocks.STELLARSLATE);
 
+        getOrCreateTagBuilder(ModTags.STELLAR_STONE_ORE_REPLACEABLES)
+                .add(ModBlocks.STELLAR_STONE);
+
+        getOrCreateTagBuilder(ModTags.STELLARSLATE_ORE_REPLACEABLES)
+                .add(ModBlocks.STELLARSLATE);
 
 
-        // Non - Block Blocks
+
+        // Non - Block
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.MOONVEIL_FENCE);
 
@@ -89,6 +96,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
                 .add(ModBlocks.MOONVEIL_WALL_HANGING_SIGN);
+
 
     }
 }

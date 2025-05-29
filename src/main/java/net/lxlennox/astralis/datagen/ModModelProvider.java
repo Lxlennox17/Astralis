@@ -59,7 +59,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SNOWBLOOM, ModBlocks.POTTED_SNOWBLOOM, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUNARIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_LUNARIUM_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLARSLATE_LUNARIUM_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUNARIUM_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_LUNARIUM_BLOCK);
     }
 
     @Override

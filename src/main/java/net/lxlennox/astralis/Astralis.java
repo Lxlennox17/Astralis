@@ -10,12 +10,17 @@ import net.lxlennox.astralis.block.ModBlocks;
 import net.lxlennox.astralis.entity.ModBoats;
 import net.lxlennox.astralis.item.ModItemGroups;
 import net.lxlennox.astralis.item.ModItems;
+import net.lxlennox.astralis.tag.ModTags;
+import net.lxlennox.astralis.worldgen.feature.ModFeatures;
 import net.lxlennox.astralis.worldgen.gen.ModWorldGeneration;
 import net.lxlennox.astralis.worldgen.tree.ModFoliagePlacerTypes;
 import net.lxlennox.astralis.worldgen.tree.ModTrunkPlacerTypes;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 
 import net.minecraft.fluid.Fluids;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +41,12 @@ public class Astralis implements ModInitializer {
 				.destDimID(Astralis.id("astralisdim"))
 				.tintColor(0xc76efa)
 				.registerPortal();
+
+
 	}
+
+	public static final TagKey<Block> WRENCH_BLACKLIST = TagKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "wrench_blacklist"));
+
 
 	private void initRegistries() {
 		ModBlocks.registerModBlocks();
@@ -46,6 +56,8 @@ public class Astralis implements ModInitializer {
 		ModTrunkPlacerTypes.registerAstralisTrunkPlacerType();
 		ModFoliagePlacerTypes.register();
 		ModBoats.load();
+		ModTags.registerModTags();
+		ModFeatures.registerFeatures();
 
 		FlammableBlockRegistry flammableBlockRegistry = FlammableBlockRegistry.getDefaultInstance();
 		// registering flammable blocks
@@ -59,6 +71,7 @@ public class Astralis implements ModInitializer {
 		// registering the strippable blocks
 		StrippableBlockRegistry.register(ModBlocks.MOONVEIL_LOG,ModBlocks.STRIPPED_MOONVEIL_LOG);
 		StrippableBlockRegistry.register(ModBlocks.MOONVEIL_WOOD,ModBlocks.STRIPPED_MOONVEIL_WOOD);
+
 	}
 
 	public static Identifier id(String path) {
